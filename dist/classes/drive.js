@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * Class with drive information.
  *
- * @author Cristiam Mercado
+ * @author Cristiam Mercado, Inky
  */
 var Drive = /** @class */ (function () {
     /**
@@ -15,87 +15,18 @@ var Drive = /** @class */ (function () {
      * @param {number} available Available disk space.
      * @param {string} capacity Disk capacity.
      * @param {string} mounted Indicates the mount point of the disk.
+     * @param {string} volumeName Indicates the drive name
      */
-    function Drive(filesystem, blocks, used, available, capacity, mounted) {
-        this._filesystem = filesystem;
-        this._blocks = blocks;
-        this._used = used;
-        this._available = available;
-        this._capacity = capacity;
-        this._mounted = mounted;
+    function Drive(filesystem, blocks, used, available, capacity, mounted, volumeName) {
+        if (volumeName === void 0) { volumeName = ""; }
+        this.filesystem = filesystem;
+        this.blocks = blocks;
+        this.used = used;
+        this.available = available;
+        this.capacity = capacity;
+        this.mounted = mounted;
+        this.volumeName = volumeName;
     }
-    Object.defineProperty(Drive.prototype, "filesystem", {
-        /**
-         * Drive filesystem.
-         *
-         * @return Gets drive filesystem.
-         */
-        get: function () {
-            return this._filesystem;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(Drive.prototype, "blocks", {
-        /**
-         * Blocks associated to disk.
-         *
-         * @return Gets blocks associated to disk.
-         */
-        get: function () {
-            return this._blocks;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(Drive.prototype, "used", {
-        /**
-         * Used disk space.
-         *
-         * @return Gets used disk space.
-         */
-        get: function () {
-            return this._used;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(Drive.prototype, "available", {
-        /**
-         * Available disk space.
-         *
-         * @return Gets available disk space.
-         */
-        get: function () {
-            return this._available;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(Drive.prototype, "capacity", {
-        /**
-         * Disk capacity.
-         *
-         * @return Gets disk capacity.
-         */
-        get: function () {
-            return this._capacity;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(Drive.prototype, "mounted", {
-        /**
-         * Indicates the mount point of the disk.
-         *
-         * @return Gets the mount point of the disk.
-         */
-        get: function () {
-            return this._mounted;
-        },
-        enumerable: false,
-        configurable: true
-    });
     return Drive;
 }());
 exports.default = Drive;

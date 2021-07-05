@@ -1,33 +1,16 @@
 /**
  * Class with drive information.
  *
- * @author Cristiam Mercado
+ * @author Cristiam Mercado, Inky
  */
 export default class Drive {
-    /**
-     * Drive filesystem.
-     */
-    private readonly _filesystem;
-    /**
-     * Blocks associated to disk.
-     */
-    private readonly _blocks;
-    /**
-     * Used disk space.
-     */
-    private readonly _used;
-    /**
-     * Available disk space.
-     */
-    private readonly _available;
-    /**
-     * Disk capacity.
-     */
-    private readonly _capacity;
-    /**
-     * Indicates the mount point of the disk.
-     */
-    private readonly _mounted;
+    filesystem: string;
+    blocks: number;
+    used: number;
+    available: number;
+    capacity: string;
+    mounted: string;
+    volumeName: string;
     /**
      * Constructor for Drive class.
      *
@@ -37,42 +20,7 @@ export default class Drive {
      * @param {number} available Available disk space.
      * @param {string} capacity Disk capacity.
      * @param {string} mounted Indicates the mount point of the disk.
+     * @param {string} volumeName Indicates the drive name
      */
-    constructor(filesystem: string, blocks: number, used: number, available: number, capacity: string, mounted: string);
-    /**
-     * Drive filesystem.
-     *
-     * @return Gets drive filesystem.
-     */
-    get filesystem(): string;
-    /**
-     * Blocks associated to disk.
-     *
-     * @return Gets blocks associated to disk.
-     */
-    get blocks(): number;
-    /**
-     * Used disk space.
-     *
-     * @return Gets used disk space.
-     */
-    get used(): number;
-    /**
-     * Available disk space.
-     *
-     * @return Gets available disk space.
-     */
-    get available(): number;
-    /**
-     * Disk capacity.
-     *
-     * @return Gets disk capacity.
-     */
-    get capacity(): string;
-    /**
-     * Indicates the mount point of the disk.
-     *
-     * @return Gets the mount point of the disk.
-     */
-    get mounted(): string;
+    constructor(filesystem: string, blocks: number, used: number, available: number, capacity: string, mounted: string, volumeName?: string);
 }

@@ -45,6 +45,7 @@ export class Windows {
         let description: string = '';
         let freeSpace: number = 0;
         let size: number = 0;
+        let volumeName: string = "";
 
         lines.forEach((value) => {
 
@@ -68,6 +69,10 @@ export class Windows {
                     case 'Size':
                         size = isNaN(parseFloat(data)) ? 0 : +data;
                         break;
+                    case 'VolumeName':
+                        volumeName = data;
+                        break;
+
                 }
 
             } else {
@@ -88,7 +93,8 @@ export class Windows {
                         used,
                         freeSpace,
                         percent,
-                        caption);
+                        caption,
+                        volumeName);
 
                     drives.push(d);
 
@@ -97,6 +103,7 @@ export class Windows {
                     description = '';
                     freeSpace = 0;
                     size = 0;
+                    volumeName = '';
                 }
 
             }

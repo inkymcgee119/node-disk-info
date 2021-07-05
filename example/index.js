@@ -29,6 +29,8 @@ function printResults(title, disks) {
         console.log('Available:', disk.available);
         console.log('Capacity:', disk.capacity);
         console.log('Mounted:', disk.mounted, '\n');
+        console.log('Name:', disk.volumeName, '\n');
+        console.log(disk);
     }
 
 }
